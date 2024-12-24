@@ -1,3 +1,4 @@
+
 #ifndef DHT11_H
 #define DHT11_H
 
@@ -14,6 +15,6 @@ void DHT11_Init(void);
 void DHT11_StartSignal(void);
 
 // Read temperature from DHT11 (integer part only)
-float DHT11_ReadTemperature(void);
+uint8_t DHT11_ReadTemperature(void);
 
 #endif
