@@ -6,7 +6,7 @@
 #include "tm4c123gh6pm.h"
 #include "DIO.h"
 
-#define High_temp 10.0
+//#define High_temp 10.0
 #define BUZZER_PIN 0
 
 
