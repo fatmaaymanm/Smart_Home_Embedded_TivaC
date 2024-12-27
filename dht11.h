@@ -1,20 +1,16 @@
-
 #ifndef DHT11_H
 #define DHT11_H
 
+#include "tm4c123gh6pm.h"
 #include <stdint.h>
-void SysTick_Init(uint32_t);
-uint32_t SysTick_Is_Time_Out(void);
-void LED_Delay(uint32_t);
 
+// Define macros for the DHT11 pin
+#define DHT11_PORT GPIO_PORTC_DATA_R
+#define DHT11_PIN 4
+#define DHT11_PIN_MASK (1U << DHT11_PIN)
 
-// Initialize PORTC pin for DHT11
+// Function prototypes
 void DHT11_Init(void);
+uint8_t DHT11_ReadData(void);
 
-// Start signal to DHT11
-void DHT11_StartSignal(void);
-
-// Read temperature from DHT11 (integer part only)
-uint8_t DHT11_ReadTemperature(void);
-
-#endif
+#endif // DHT11_H
