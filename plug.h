@@ -13,5 +13,7 @@
 // Function Prototypes
 void Plug_Init(char port, uint8_t pin);
 void Plug_Control(char port, uint8_t pin, uint8_t state);
+void Plug_Toggle(char port, uint8_t pin);
+uint8_t Get_Plug_State(char port, uint8_t pin);
 
 #endif // PLUG_H

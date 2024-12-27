@@ -20,4 +20,7 @@ void Lamp_Toggle(char port, uint8_t pin) {
     dio_writeport(port, dio_readport(port) ^ (1 << pin)); // XOR to toggle bits
 }
 
+uint8_t Get_Lamp_State(char port, uint8_t pin) {
+    return dio_readpin(port, pin);
+}
 

@@ -15,8 +15,10 @@ void Plug_Control(char port, uint8_t pin, uint8_t state) {
     }
 }
 
-// Toggle the plug state
+uint8_t Get_Plug_State(char port, uint8_t pin) {
+    return dio_readpin(port, pin);
+}
+
 void Plug_Toggle(char port, uint8_t pin) {
-    uint8_t current_state = dio_readpin(port, pin);
-    dio_writepin(port, pin, !current_state); // Toggle the plug state
+    dio_writeport(port, dio_readport(port) ^ (1 << pin)); // XOR to toggle bits
 }
